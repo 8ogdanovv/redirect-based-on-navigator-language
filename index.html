@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.5">
+  <title>Vadym Chervoniak | Full-stack developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<style>
+  @media (max-resolution: 72dpi) {
+    body {
+      width: 595px;
+      /* height: 842px; */
+    }
+  }
+
+  @media (min-resolution: 72dpi) and (max-resolution: 300dpi) {
+    body {
+      width: 100vmin;
+      /* height: 141.42857vmin; */
+    }
+  }
+
+  @media (min-resolution: 300dpi) {
+    body {
+      width: 2480px;
+      /* height: 3508px; */
+    }
+  }
+
+  html {
+    font-family: 'Victor Mono', monospace;
+  }
+
+  html * {
+    box-sizing: border-box;
+  }
+
+  .header_photo {
+    width: 15vmin;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-radius: 50%;
+  }
+  .header, .footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 24.5vmin;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header {
+    background-image: url('./cover-picture_bottom.png');
+  }
+  .footer {
+    background-image: url('./cover-picture_bottom.png');
+  }
+
+  .info::before {
+    position: absolute;
+    z-index: -2;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    /* background-image: url('./cover-picture_bottom.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  .info::after {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('./cover-picture_bottom.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .footer {
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px black;
+    line-height: 110%;
+  }
+  .footer p {
+    text-align: center;
+    font-size: medium;
+    margin-top: -1.5rem;
+    letter-spacing: 0.15ch;
+  }
+  body {
+    margin: 0 auto;
+    color: whitesmoke;
+    padding: 0;
+    width: 100vmin;
+    /* height: 141.4vmin; */
+    overflow-y: hidden;
+  }
+  .header_name, .header_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 48%;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header_name {
+    transform: translate(-49%, -100%);
+  }
+  .header_title {
+    transform: translate(-49%, -40%);
+  }
+  .vadym {
+    letter-spacing: 0.5ch;
+  }
+  .che {
+    letter-spacing: -0.22ch;
+  }
+
+  .fs {
+    letter-spacing: -0.02ch;
+  }
+
+  .dev {
+    letter-spacing: 0.15ch;
+  }
+  address > a > img {
+    width: 2rem;
+    height: 2rem;
+  }
+  address > * {
+    text-decoration: none;
+  }
+  address {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: -5px;
+
+    /* background: linear-gradient(90deg, red, orange, yellow, green, skyblue, blue, purple); */
+  }
+  address:nth-of-type(1) {
+    flex-direction: row-reverse;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    height: 80vmin;
+    justify-content: space-between;
+  }
+  .info {
+    flex-grow: 1;
+    border: 1px solid #000000;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .block {
+    width: calc(50vmin - 5px);
+    height: calc(37vmin + 4px);
+    border: 2px solid #44cc4444;
+    /* border: 2px solid transparent; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #000000; */
+    flex-grow: 1;
+  }
+
+  .block:nth-child(1){
+    border-left-color: transparent;
+    border-top-color: transparent;
+  }
+  .block:nth-child(2){
+    border-right-color: transparent;
+    border-top-color: transparent;
+    word-spacing: -0.1ch;
+  }
+  .block:nth-child(3){
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+  }
+  .block:nth-child(4){
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+
+  @media print {
+    .main {
+      height: calc(80vmin + 3px);
+    }
+    .main > *, .header {
+      position: relative;
+    }
+    .info {
+      margin-top: -1px;
+      z-index: 1;
+    }
+    .header {
+      z-index: 1;
+    }
+    .block {
+      height: calc(36vmin + 1px);
+    }
+    address:first-of-type {
+      margin-top: 0;
+      margin-bottom: -3px;
+    }
+    address:last-of-type {
+      margin-top: 0;
+      margin-bottom: -4px;
+    }
+    .footer {
+      margin-bottom: -4px;
+    }
+  }
+
+  .block h3 {
+    margin: 0;
+  }
+  .block p {
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0;
+    font-weight: 700;
+  }
+  .block > p > a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .block img {
+    width: 3rem;
+    height: 3rem;
+  }
+  /* .js {
+    display: inline-flex;
+    height: 3rem;
+    font-size: 8px;
+    font-weight: bold;
+    flex-direction: column;
+    line-height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .js img {
+    transform: scale(calc(48 / 55));
+  } */
+  .block:last-child p {
+    display: flex;
+    width: 100%;
+    /* flex-grow: 1; */
+    justify-content: space-between;
+    gap: 2%;
+  }
+
+  .block:last-child a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+  }
+</style>
+<body>
+  <header class="header">
+    <h1 class="header_name"><p class="vadym">Vadym</p><p class="che">Chervoniak</p></h1>
+    <h2 class="header_title"><p class="fs">Full-stack</p><p class="dev">developer</p></h2>
+    <img class="header_photo" src="./photo956.jpg" alt="photo">
+  </header>
+  <main class="main">
+    <address class="address">
+        <a href="https://github.com/vadym4che">
+          <img src="./links/logo256x256_ch.png" alt="digital-CV">
+        </a>
+        <a href="https://github.com/vadym4che">
+          <img src="./links/2gh.svg" alt="git-hub">
+        </a>
+        <a href="https://www.linkedin.com/in/vadym4che/">
+          <img src="./links/3li.svg" alt="linkedin">
+        </a>
+        <a href="https://www.facebook.com/vadym4che/">
+          <img src="./links/4fb.svg" alt="facebook">
+        </a>
+        <a href="mailto:vadym4che@gmail.com">
+          <img src="./links/5gm.svg" alt="mail">
+        </a>
+        <a href="https://t.me/vadym4che">
+          <img src="./links/6tg.svg" alt="telegram">
+        </a>
+        <a href="tel:+380505444199">
+          <img src="./links/7cp.svg" alt="cell-phone">
+        </a>
+    </address>
+    <div class="info">
+      <section class="block">
+        <h3>
+          BEFORE-IT BACKGROUND
+        </h3>
+        <p>
+          <!-- SHEI -->
+          Kamianets-Podilskyi Industrial College<br />
+          <!-- Installation and maintenance of electrical and civil structures<br /> -->
+          Bachelor's degree in Electrical equipment management<br />
+        </p>
+        <p>
+          <!-- Y. Fedkovich -->
+          Chernivtsi National University<br />
+          <!-- Department of Applied Physics and Computer Sciences<br /> -->
+          Bachelor's degree in Electronics and power engineering<br />
+        </p>
+        <p>
+          MS Windows, CLI, Office, Adobe Photoshop, Audition, Sony Sound-Forge, FLStudio, Linux, Bash, GIMP, SSH
+        </p>
+      </section>
+      <section class="block">
+        <h3>IT EXPERIENCE</h3>
+        <p>
+          EPAM University Front-End Spring | 2022<br />
+          HTML, CSS, JS, DOM, JQuery, Bootstrap, React, SEO
+        </p>
+        <p>
+          OneReach.Ai Solution Builder | 2022<br />
+          JavaScript, OSI, RESTful API, JSON, Vue.js
+        </p>
+        <p>
+          Mate.academy Online coding bootcamp | 2023<br />
+          Full-stack Software Development<br />
+          React, SASS, Node.js, TypeScript, git, TDD, HTTP, WS, MVC, OOP, DBs, SQL
+        </p>
+      </section>
+      <section class="block">
+        <h3>SELF-EDUCATION</h3>
+        <p>
+          <a href="https://aws.amazon.com/getting-started/cloud-essentials/">AWS</a>,
+          <a href="https://www.cloudskillsboost.google/quests/23">GCP</a>,
+          <a href="https://pythoninstitute.org/">PythonInstitute.org</a>,
+          <!-- <a href="https://flask.palletsprojects.com/en/2.3.x/">Flask.PalletsProjects.com,</a> -->
+          <!-- <a href="https://docs.djangoproject.com/en/4.2/">Docs.DjangoProject.com,</a> -->
+          <a href="https://college.harvard.edu/">Harvards' CS50</a>,
+          <a href="https://code.visualstudio.com/docs">Code.VisualStudio.com</a>,
+          <a href="https://javascript.info/">JavaScript.info</a>,
+          <a href="https://www.w3schools.com/">W3schools.com</a>,
+          <a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>,
+          <a href="https://www.freecodecamp.org/learn">FreeCodeCamp.org</a>,
+          <a href="https://sass-lang.com/">SASS-lang.com</a>,
+          <a href="https://angular.io/">Angular.io,</a>
+          <a href="https://react.dev/">React.dev</a>,
+          <a href="https://vuejs.org/">Vuejs.org</a>,
+          <a href="https://vitejs.dev/guide/">Vitejs.dev</a>,
+          <a href="https://www.vuemastery.com/">VueMastery.com</a>,
+          <!-- <a href="https://bootstrap-vue.org/docs">Bootstrap-Vue.org,</a> -->
+          <!-- <a href="https://bulma.io/">Bulma.io,</a> -->
+          <a href="https://tailwindcss.com/">TailWindCSS.com</a>,
+          <a href="https://nuxt.com/">Nuxt.com</a>,
+          <a href="https://www.typescriptlang.org/">TypeScriptLang.org</a>,
+          <a href="https://git-scm.com/doc">Git-SCM.com</a>,
+          <a href="https://nodejs.org/en/docs/guides">NodeJS.org</a>,
+          <!-- <a href="https://docs.npmjs.com/">Docs.NPMjs.com,</a> -->
+          <!-- <a href="https://www.mongodb.com/docs/">MongoDB.com,</a> -->
+          <!-- <a href="https://www.postgresql.org/docs/online-resources/">PostgreSQL.org,</a> -->
+          <!-- <a href="https://dev.mysql.com/doc/refman/8.0/en/tutorial.html">Dev.mySQL.com,</a> -->
+          <!-- <a href="https://www.php.net/manual/en/">PHP.net,</a> -->
+          <!-- <a href="https://learn.cypress.io/">Cypress.io,</a> -->
+          <a href="https://www.codewars.com/users/vadym4che">CodeWars.com</a>,
+          <a href="https://cssbattle.dev/">CSSbattle.dev</a>,
+          <a href="https://html.spec.whatwg.org/multipage/">HTML Standard</a>,
+          <a href="https://www.w3.org/Style/CSS/">Cascading Style Sheets</a>,
+          <a href="https://262.ecma-international.org/6.0/">ECMA-262 6th Edition</a>
+        </p>
+      </section>
+      <section class="block">
+        <h3>SKILLS/TOOLKIT</h3>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/HTML"><img src="toolkit/HTML5_logo_and_wordmark.svg.png" alt="HTML">HTML</a>
+          <a href="https://en.wikipedia.org/wiki/CSS"><img src="toolkit/CSS3_logo_and_wordmark.svg.png" alt="CSS">CSS</a>
+          <a class="js" href="https://en.wikipedia.org/wiki/HTML"><img src="toolkit/JavaScript-logo.png" alt="JavaScript">JS</a>
+          <a href="https://en.wikipedia.org/wiki/TypeScript"><img src="toolkit/Typescript.svg.png" alt="TypeScript">TS</a>
+          <a href="https://en.wikipedia.org/wiki/JSON"><img src="toolkit/JSON_vector_logo.svg.png" alt="JSON">JSON</a>
+          <!-- <a href="https://en.wikipedia.org/wiki/JavaScript"><img src="toolkit/js.png" alt="JavaScript"></a> -->
+        </p>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Node.js"><img src="toolkit/120px-Node.js_logo.svg.png" alt="Node.js">Node.js</a>
+          <a href="https://en.wikipedia.org/wiki/Npm"><img src="toolkit/f1786e9b7cba9753ca7b9c40e8b98f67.png" alt="npm">Npm</a>
+          <a href="https://en.wikipedia.org/wiki/React_(software)"><img src="toolkit/React-icon.svg.png" alt="React">React</a>
+          <a href="https://en.wikipedia.org/wiki/Vue.js"><img src="toolkit/Vue.js_Logo_2.svg.png" alt="React">Vue.js</a>
+          <a href="https://en.wikipedia.org/wiki/Nuxt.js"><img src="toolkit/icon-green.png" alt="Nuxt.js">Nuxt.js</a>
+        </p>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Visual_Studio_Code"><img src="toolkit/favicon.ico" alt="VSCode">VSCode</a>
+          <a href="https://en.wikipedia.org/wiki/ESLint"><img src="toolkit/ESLint_logo.svg.png" alt="ESLint">ESLint</a>
+          <a href="https://en.wikipedia.org/wiki/Git"><img src="toolkit/Git-logo.svg.png" alt="git">git</a>
+          <a href="https://en.wikipedia.org/wiki/Postman_(software)"><img src="toolkit/Postman_(software).png" alt="Postman">Postman</a>
+          <a href="https://en.wikipedia.org/wiki/Figma_(software)"><img src="toolkit/64px-Figma-logo.svg.png" alt="Figma">Figma</a>
+        </p>
+      </section>
+    </div>
+    <address class="address">
+      <a href="https://github.com/vadym4che">
+        <img src="./links/logo256x256_ch.png" alt="digital-CV">
+      </a>
+      <a href="https://github.com/vadym4che">
+        <img src="./links/2gh.svg" alt="git-hub">
+      </a>
+      <a href="https://www.linkedin.com/in/vadym4che/">
+        <img src="./links/3li.svg" alt="linkedin">
+      </a>
+      <a href="https://www.facebook.com/vadym4che/">
+        <img src="./links/4fb.svg" alt="facebook">
+      </a>
+      <a href="mailto:vadym4che@gmail.com">
+        <img src="./links/5gm.svg" alt="mail">
+      </a>
+      <a href="https://t.me/vadym4che">
+        <img src="./links/6tg.svg" alt="telegram">
+      </a>
+      <a href="tel:+380505444199">
+        <img src="./links/7cp.svg" alt="cell-phone">
+      </a>
+  </address>
+  </main>
+  <footer class="footer">
+    <blockquote>
+    I've earned my own very first PC<br />
+    By working summer holidays in 2003<br />
+    I'm a `web dev loco` (if you will) code addict<br />
+    Devoted to development with JavaScript<br />
+    I'm experienced enough to exact know<br />
+    Using DOCs, AI, Google and Stackoverflow<br />
+  </blockquote>
+  <p>&copy; 2023 Vadym Chervoniak | Full-stack developer (č) auto-biography coder</p>
+  </footer>
+</body>
+</html>
