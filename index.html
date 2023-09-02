@@ -48,6 +48,7 @@
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-radius: 50%;
+    box-shadow: 0 0 1rem 0.66rem hsla(120, 66%, 50%, 0.2);
   }
   .header, .footer {
     position: relative;
@@ -106,18 +107,67 @@
     line-height: 110%;
   }
   .footer p {
+    position: relative;
+    top: 0.5rem;
     text-align: center;
+    font-size: x-large;
+    margin-top: -0.5rem;
+    letter-spacing: -0.05ch;
+    font-variant: small-caps;
+  }
+  .footer p .contacts {
+    font-variant: normal;
     font-size: medium;
-    margin-top: -1.5rem;
     letter-spacing: 0.15ch;
+    line-height: 120%;
+  }
+  .footer blockquote {
+    margin: 0.5rem 0 0.75rem 0;
+    position: relative;
+    line-height: 110%;
+    left: -1px;
+    top: 0.15rem;
+  }
+  blockquote span:first-of-type {
+    /* letter-spacing: 0.66ch; */
+    letter-spacing: 0.445ch;
+    position: relative;
+    left: -1px;
+  }
+  blockquote span:nth-of-type(2) {
+    /* letter-spacing: 0.56ch; */
+    letter-spacing: 0.36ch;
+    position: relative;
+    left: -1px;
+  }
+  blockquote span:nth-of-type(3) {
+    /* letter-spacing: 0.15ch; */
+    position: relative;
+    left: -0.25ch;
+  }
+  blockquote span:nth-of-type(4) {
+    /* letter-spacing: 0.4ch; */
+    letter-spacing: 0.215ch;
+  }
+  blockquote span:nth-of-type(5) {
+    /* letter-spacing: 0.4ch; */
+    letter-spacing: 0.22ch;
+  }
+  blockquote span:last-of-type {
+    /* letter-spacing: 0.33ch; */
+    letter-spacing: 0.155ch;
   }
   body {
     margin: 0 auto;
-    color: whitesmoke;
+    color: #f5f5f5;
     padding: 0;
     width: 100vmin;
     /* height: 141.4vmin; */
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
+  }
+  body * {
+    /* text-shadow: 0 0 5px #0a0a0a !important; */
+    text-shadow: 0 0 0.66rem #cb43cb !important;
   }
   .header_name, .header_title {
     position: absolute;
@@ -130,28 +180,39 @@
     justify-content: space-between;
   }
   .header_name {
-    transform: translate(-49%, -100%);
+    width: 48%;
+    transform: translate(-50.5%, -100%);
+    font-variant: small-caps;
   }
   .header_title {
-    transform: translate(-49%, -40%);
+    width: 48.5%;
+    transform: translate(-50%, -40%);
+    font-variant: small-caps;
   }
   .vadym {
-    letter-spacing: 0.5ch;
+    letter-spacing: 0.88ch;
   }
   .che {
-    letter-spacing: -0.22ch;
+    letter-spacing: 0.015ch;
   }
 
   .fs {
-    letter-spacing: -0.02ch;
+    letter-spacing: 0.26ch;
   }
 
   .dev {
-    letter-spacing: 0.15ch;
+    letter-spacing: 0.4ch;
   }
   address > a > img {
     width: 2rem;
     height: 2rem;
+    box-shadow: 0 0 0.33rem 4px rgba(68, 204, 68, 0.68);
+  }
+  address > a > img {
+    border-radius: 50%;
+  }
+  .header, .info, .footer {
+    box-shadow: 0 0 0.66rem 4px rgba(68, 204, 68, 0.32);
   }
   address > * {
     text-decoration: none;
@@ -179,6 +240,7 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    z-index: 1;
   }
   .block {
     width: calc(50vmin - 5px);
@@ -250,7 +312,8 @@
     padding: 0.5rem 0;
     font-weight: 700;
   }
-  .block > p > a {
+  /* .block > p > */
+  a {
     color: inherit;
     text-decoration: none;
   }
@@ -288,9 +351,11 @@
 </style>
 <body>
   <header class="header">
-    <h1 class="header_name"><p class="vadym">Vadym</p><p class="che">Chervoniak</p></h1>
-    <h2 class="header_title"><p class="fs">Full-stack</p><p class="dev">developer</p></h2>
-    <img class="header_photo" src="./photo956.jpg" alt="photo">
+    <a href="/" download>
+      <h1 class="header_name"><p class="vadym">Vadym</p><p class="che">Chervoniak</p></h1>
+      <h2 class="header_title"><p class="fs">Full-stack</p><p class="dev">developer</p></h2>
+      <img class="header_photo" src="./photo956.jpg" alt="photo">
+    </a>
   </header>
   <main class="main">
     <address class="address">
@@ -322,35 +387,60 @@
           BEFORE-IT BACKGROUND
         </h3>
         <p>
-          <!-- SHEI -->
-          Kamianets-Podilskyi Industrial College<br />
-          <!-- Installation and maintenance of electrical and civil structures<br /> -->
-          Bachelor's degree in Electrical equipment management<br />
+          <a href="http://kpik.org.ua/information-about-the-college/">
+            <!-- SHEI -->
+            Kamianets-Podilskyi Industrial College<br />
+            <!-- Installation and maintenance of electrical and civil structures<br /> -->
+            Bachelor's degree in Electrical equipment management<br />
+          </a>
         </p>
         <p>
-          <!-- Y. Fedkovich -->
-          Chernivtsi National University<br />
-          <!-- Department of Applied Physics and Computer Sciences<br /> -->
-          Bachelor's degree in Electronics and power engineering<br />
+          <a href="http://en.chnu.edu.ua/">
+            <!-- Y. Fedkovich -->
+            Chernivtsi National University<br />
+            <!-- Department of Applied Physics and Computer Sciences<br /> -->
+            Bachelor's degree in Electronics and power engineering
+          </a>
         </p>
         <p>
-          MS Windows, CLI, Office, Adobe Photoshop, Audition, Sony Sound-Forge, FLStudio, Linux, Bash, GIMP, SSH
+          <a href="https://en.wikipedia.org/wiki/Microsoft">MS</a>
+          <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a>,
+          <a href="https://en.wikipedia.org/wiki/Windows_Registry">Registry</a>,
+          <a href="https://en.wikipedia.org/wiki/Microsoft_Office">Office</a>,
+          <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a>,
+          <a href="https://en.wikipedia.org/wiki/Adobe_Inc.">Adobe</a>
+          <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Photoshop</a>,
+          <a href="https://en.wikipedia.org/wiki/Adobe_Audition">Audition</a>,
+          <a href="https://en.wikipedia.org/wiki/Sound_Forge">Sonic Foundry Sound-Forge</a>,
+          <a href="https://en.wikipedia.org/wiki/FL_Studio">FLStudio</a>,
+          <a href="https://en.wikipedia.org/wiki/Linux">Linux</a>,
+          <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>,
+          <a href="https://en.wikipedia.org/wiki/GIMP">GIMP</a>
         </p>
       </section>
       <section class="block">
         <h3>IT EXPERIENCE</h3>
         <p>
-          EPAM University Front-End Spring | 2022<br />
-          HTML, CSS, JS, DOM, JQuery, Bootstrap, React, SEO
+          <a href="https://training.epam.ua/">
+            EPAM University Front-End Spring | 2022
+          </a>
+          <br />
+          HTML, CSS, Flex, Grid, SVG, Bootstrap, BEM, SEO, DOM, JS, JQuery, React, AJAX
         </p>
         <p>
-          OneReach.Ai Solution Builder | 2022<br />
+          <a href="https://onereach.ai/">
+            OneReach.Ai Solutions Builder | 2022
+          </a>
+          <br />
           JavaScript, OSI, RESTful API, JSON, Vue.js
         </p>
         <p>
-          Mate.academy Online coding bootcamp | 2023<br />
+          <a href="https://mate.academy/">
+            Mate.academy Online coding bootcamp | 2023
+          </a>
+          <br />
           Full-stack Software Development<br />
-          React, SASS, Node.js, TypeScript, git, TDD, HTTP, WS, MVC, OOP, DBs, SQL
+          React, SASS, Node.js, Express.js, TypeScript, git, TDD, OOP, MVC, HTTP, WS, DBs, SQL, GraphQL
         </p>
       </section>
       <section class="block">
@@ -361,7 +451,7 @@
           <a href="https://pythoninstitute.org/">PythonInstitute.org</a>,
           <!-- <a href="https://flask.palletsprojects.com/en/2.3.x/">Flask.PalletsProjects.com,</a> -->
           <!-- <a href="https://docs.djangoproject.com/en/4.2/">Docs.DjangoProject.com,</a> -->
-          <a href="https://college.harvard.edu/">Harvards' CS50</a>,
+          <a href="https://college.harvard.edu/">Harvard's CS50</a>,
           <a href="https://code.visualstudio.com/docs">Code.VisualStudio.com</a>,
           <a href="https://javascript.info/">JavaScript.info</a>,
           <a href="https://www.w3schools.com/">W3schools.com</a>,
@@ -371,11 +461,11 @@
           <a href="https://angular.io/">Angular.io,</a>
           <a href="https://react.dev/">React.dev</a>,
           <a href="https://vuejs.org/">Vuejs.org</a>,
-          <a href="https://vitejs.dev/guide/">Vitejs.dev</a>,
           <a href="https://www.vuemastery.com/">VueMastery.com</a>,
+          <a href="https://tailwindcss.com/">TailWindCSS.com</a>,
+          <a href="https://vitejs.dev/guide/">Vitejs.dev</a>,
           <!-- <a href="https://bootstrap-vue.org/docs">Bootstrap-Vue.org,</a> -->
           <!-- <a href="https://bulma.io/">Bulma.io,</a> -->
-          <a href="https://tailwindcss.com/">TailWindCSS.com</a>,
           <a href="https://nuxt.com/">Nuxt.com</a>,
           <a href="https://www.typescriptlang.org/">TypeScriptLang.org</a>,
           <a href="https://git-scm.com/doc">Git-SCM.com</a>,
@@ -445,14 +535,14 @@
   </main>
   <footer class="footer">
     <blockquote>
-    I've earned my own very first PC<br />
-    By working summer holidays in 2003<br />
-    I'm a `web dev loco` (if you will) code addict<br />
-    Devoted to development with JavaScript<br />
-    I'm experienced enough to exact know<br />
-    Using DOCs, AI, Google and Stackoverflow<br />
-  </blockquote>
-  <p>&copy; 2023 Vadym Chervoniak | Full-stack developer (č) auto-biography coder</p>
+      <span>I've earned my own very first PC</span><br />
+      <span>By working summer holidays in 2003</span><br />
+      <span>I'm a `web dev loco` (if you will) code addict</span><br />
+      <span>Devoted to development with JavaScript</span><br />
+      <span>I'm experienced enough to exactly know</span><br />
+      <span>Using DOCs, AI, Google and Stackoverflow</span><br />
+    </blockquote>
+    <p>&copy; 2023 Vadym Chervoniak * Full-stack developer (č) auto-biography coder<br /><span class="contacts">+380505444199 | @vadym4che | vadym4che@gmail.com</span></p>
   </footer>
 </body>
 </html>
