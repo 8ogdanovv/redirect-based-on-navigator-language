@@ -48,7 +48,7 @@
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-radius: 50%;
-    box-shadow: 0 0 0.5rem 0.5rem hsla(120, 66%, 50%, 0.1);
+    box-shadow: 0 0 1rem 4px hsla(120, 66%, 50%, 0.33);
   }
   .header, .footer {
     position: relative;
@@ -317,9 +317,29 @@
     color: inherit;
     text-decoration: none;
   }
+
   .block img {
     width: 3rem;
     height: 3rem;
+  }
+
+  .block:nth-child(4) a {
+    display: inline-block;
+    position: relative;
+  }
+
+  .block:nth-child(4) a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(25% - 0.25rem);
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: hsla(120, 57%, 53%, 0.33);
+    background-color: hsla(300, 57%, 53%, 0.33);
+    background-color: hsla(0, 0%, 96%, 0.3);
+    z-index: -1;
+    filter: blur(1rem);
   }
   /* .js {
     display: inline-flex;
@@ -351,7 +371,7 @@
 </style>
 <body>
   <header class="header">
-    <a href="https://github.com/vadym4che/cv101/blob/main/Vadym_Chervoniak_Fullstack_Developer.pdf" download="Vadym_Chervoniak_Fullstack_Developer.pdf">
+    <a href="https://drive.google.com/file/d/1kKBqudjqLXKSCDFw2MJvFFdSTL3ikhLP/view?usp=drive_link" download="Vadym_Chervoniak_Fullstack_Developer.pdf">
       <h1 class="header_name"><p class="vadym">Vadym</p><p class="che">Chervoniak</p></h1>
       <h2 class="header_title"><p class="fs">Full-stack</p><p class="dev">developer</p></h2>
       <img class="header_photo" src="./photo956.jpg" alt="photo">
@@ -543,7 +563,7 @@
       <span>Using DOCs, AI, Google and Stackoverflow</span><br />
     </blockquote>
     <p>
-      <a href="https://github.com/vadym4che/cv101/blob/main/Vadym_Chervoniak_Fullstack_Developer.pdf" download="Vadym_Chervoniak_Fullstack_Developer.pdf">
+      <a href="https://drive.google.com/file/d/1kKBqudjqLXKSCDFw2MJvFFdSTL3ikhLP/view?usp=drive_link" download="Vadym_Chervoniak_Fullstack_Developer.pdf">
         &copy; 2023 Vadym Chervoniak * Full-stack developer (č) auto-biography coder
       </a>
       <br />
