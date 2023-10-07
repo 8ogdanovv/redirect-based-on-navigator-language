@@ -60,12 +60,12 @@
   }
 
   .header {
-    background-image: url('./cover-picture_bottom.png');
+    background-image: url('./cover-picture_bottom_light.png');
     height: 24.5vmin;
   }
   .footer {
-    background-image: url('./cover-picture_bottom.png');
-    height: calc(24.5vmin + 1px);
+    background-image: url('./cover-picture_bottom_light.png');
+    height: calc(24.5vmin + 3px);
   }
 
   .info::before {
@@ -76,22 +76,16 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #000000;
-    /* background-image: url('./cover-picture_bottom.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
   }
   .info::after {
     position: absolute;
     z-index: -1;
-    opacity: 0.5;
     content: '';
     width: calc(100% + 1px);
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url('./cover-picture_bottom.png');
+    background-image: url('./cover-picture_bottom_light.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -106,6 +100,8 @@
     font-weight: bold;
     text-shadow: 0px 0px 5px black;
     line-height: 110%;
+    position: relative;
+    /* bottom: -2px; */
   }
   .footer p {
     position: relative;
@@ -130,49 +126,41 @@
     top: 0.15rem;
   }
   blockquote span:first-of-type {
-    /* letter-spacing: 0.66ch; */
     letter-spacing: 0.445ch;
     position: relative;
     left: -1px;
   }
   blockquote span:nth-of-type(2) {
-    /* letter-spacing: 0.56ch; */
     letter-spacing: 0.36ch;
     position: relative;
     left: -1px;
   }
   blockquote span:nth-of-type(3) {
-    /* letter-spacing: 0.15ch; */
     position: relative;
     left: -0.25ch;
   }
   blockquote span:nth-of-type(4) {
-    /* letter-spacing: 0.4ch; */
     letter-spacing: 0.215ch;
   }
   blockquote span:nth-of-type(5) {
-    /* letter-spacing: 0.4ch; */
     letter-spacing: 0.22ch;
   }
   blockquote span:last-of-type {
-    /* letter-spacing: 0.33ch; */
     letter-spacing: 0.155ch;
   }
   body {
     margin: 0 auto;
-    color: #f5f5f5;
+    color: hsl(0, 0%, 4%);
     padding: 0;
     width: calc(100vmin + 1px);
-    /* height: 141.4vmin; */
     /* overflow-y: hidden; */
     overflow: hidden !important;
     position: relative;
     left: -1px;
   }
   body * {
-    /* text-shadow: 0 0 5px #0a0a0a !important; */
     text-shadow: 0 0 0.66rem #cb43cb !important;
-    border-bottom: 1px #000000;
+    border-bottom: 1px #ffffff;
   }
   .header_name, .header_title {
     position: absolute;
@@ -226,12 +214,35 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: -5px;
-
-    /* background: linear-gradient(90deg, red, orange, yellow, green, skyblue, blue, purple); */
+    /* margin-bottom: -5px; */
+    height: 3rem !important;
   }
   address:nth-of-type(1) {
     flex-direction: row-reverse;
+    background: linear-gradient(
+      90deg,
+      hsla(0, 100%, 50%, 0.8),     /* Red */
+      hsla(60, 100%, 50%, 0.8),    /* Orange */
+      hsla(120, 100%, 50%, 0.8),   /* Yellow */
+      hsla(180, 100%, 50%, 0.8),   /* Green */
+      hsla(210, 100%, 50%, 0.8),   /* Sky Blue */
+      hsla(240, 100%, 50%, 0.8),   /* Blue */
+      hsla(300, 100%, 50%, 0.8)    /* Purple */
+    );
+
+  }
+  address:nth-of-type(2) {
+    background: linear-gradient(
+      90deg,
+      hsla(300, 100%, 50%, 0.8),    /* Purple */
+      hsla(240, 100%, 50%, 0.8),   /* Blue */
+      hsla(210, 100%, 50%, 0.8),   /* Sky Blue */
+      hsla(180, 100%, 50%, 0.8),   /* Green */
+      hsla(120, 100%, 50%, 0.8),   /* Yellow */
+      hsla(60, 100%, 50%, 0.8),    /* Orange */
+      hsla(0, 100%, 50%, 0.8)     /* Red */
+    );
+
   }
   .main {
     display: flex;
@@ -241,22 +252,20 @@
   }
   .info {
     flex-grow: 1;
-    border: 1px solid #000000;
+    /* border: 1px solid #44cc4444; */
     position: relative;
     display: flex;
     flex-wrap: wrap;
     z-index: 1;
+    height: calc(80vmin - 6rem);
   }
   .block {
     width: calc(50vmin - 5px);
     height: calc(37vmin + 4px - 1rem);
-    border: 2px solid #44cc4444;
-    /* border: 2px solid transparent; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: #000000; */
     flex-grow: 1;
   }
 
@@ -278,48 +287,60 @@
     border-bottom-color: transparent;
   }
 
+  .block:nth-child(1) h3,
+  .block:nth-child(3) h3 {
+    background-color: #44cc4444;
+    /* color: #ffffff; */
+    /* width: 100%; */
+    /* text-align: center; */
+  }
+  .block:nth-child(2) h3,
+  .block:nth-child(4) h3 {
+    background-color: #44cc4444;
+    /* width: 100%; */
+    /* text-align: center; */
+    /* color: #ffffff; */
+  }
+
   @media print {
     .main {
-      height: calc(80vmin);
+      height: calc(80vmin - 4px);
     }
     .main > *, .header {
       position: relative;
     }
     .info {
-      margin-top: -1px;
+      /* margin-top: -1px; */
       z-index: 1;
+      height: calc(80vmin - 6rem - 4px);
     }
     .header {
       z-index: 1;
     }
     .block {
-      height: calc(36vmin - 1rem);
+      height: calc(36vmin - 1rem - 2px);
     }
     address:first-of-type {
-      margin-top: 0;
-      padding-top: 2px;
-      padding-bottom: 1px;
-      margin-bottom: 0;
+      margin-top: 1px;
+      margin-bottom: 1px;
     }
     address:last-of-type {
-      margin-top: 1px;
-      padding-top: 1px;
+      padding-top: 6px;
+      margin-top: -5px;
+      margin-bottom: 3px;
       padding-bottom: 2px;
-      margin-bottom: 2px;
-    }
-    address {
       position: relative;
-      bottom: 1px;
+      top: 6px;
     }
     .footer {
-      margin-bottom: 0;
+      /* margin-bottom: -4px; */
+      position: relative;
       top: 4px;
     }
   }
 
   .block h3 {
     margin: 0;
-    background-color: #44cc4444;
   }
   .block p {
     text-align: center;
@@ -329,7 +350,6 @@
   .block:not(.ex) p {
     padding: 0.5rem 0;
   }
-  /* .block > p > */
   a {
     color: inherit;
     text-decoration: none;
@@ -361,9 +381,10 @@
   .block:last-child p {
     display: flex;
     width: 100%;
+    /* flex-grow: 1; */
     justify-content: space-between;
-    gap: 2%;
-    padding-bottom: 0.25rem;
+    gap: 1%;
+    padding-bottom: 0;
   }
 
   .block:last-child a {
@@ -387,22 +408,26 @@
   </header>
   <main class="main">
     <address class="address">
-      <a href="https://vadym4che.tilda.ws/" style="color: #000000; display: inline-flex; align-items: center; font-weight: bold;">
-        <img src="./links/logo256x256_ch.png" alt="Tilda-CV">
-        &nbsp;Portfolio
-      </a>
-      <a href="https://github.com/vadym4che" style="color: #000000; display: inline-flex; align-items: center; font-weight: bold;">
-        <img src="./links/2gh.svg" alt="git-hub">
-        &nbsp;/vadym4che
-      </a>
-      <a href="mailto:vadym4che@gmail.com" style="color: #000000; display: inline-flex; align-items: center; font-weight: bold;">
-        <img src="./links/5gm.svg" alt="mail">
-        &nbsp;vadym4che@gmail.com
-      </a>
-      <a href="tel:+380505444199" style="color: #000000; display: inline-flex; align-items: center; font-weight: bold;">
-        <img src="./links/7cp.svg" alt="cell-phone">
-        &nbsp;+380505444199
-      </a>
+        <a href="https://vadym4che.tilda.ws/" style="color: #ffffff; display: inline-flex; align-items: center; font-weight: bold;">
+          <img src="./links/logo256x256_ch.png" alt="Tilda-CV">
+          &nbsp;Portfolio
+        </a>
+        <a href="https://github.com/vadym4che" style="color: #ffffff; display: inline-flex; align-items: center; font-weight: bold;">
+          <img src="./links/2gh.svg" alt="git-hub">
+          &nbsp;/vadym4che
+        </a>
+        <!-- <a href="https://t.me/vadym4che" style="color: #ffffff; display: inline-flex; align-items: center; font-weight: bold;">
+          <img src="./links/6tg.svg" alt="telegram">
+          &nbsp;@vadym4che
+        </a> -->
+        <a href="mailto:vadym4che@gmail.com" style="color: #ffffff; display: inline-flex; align-items: center; font-weight: bold;">
+          <img src="./links/5gm.svg" alt="mail">
+          &nbsp;vadym4che@gmail.com
+        </a>
+        <a href="tel:+380505444199" style="color: #ffffff; display: inline-flex; align-items: center; font-weight: bold;">
+          <img src="./links/7cp.svg" alt="cell-phone">
+          &nbsp;+380505444199
+        </a>
     </address>
     <div class="info">
       <section class="block">
@@ -411,13 +436,17 @@
         </h3>
         <p>
           <a href="http://kpik.org.ua/information-about-the-college/">
+            <!-- SHEI -->
             Kamianets-Podilskyi Industrial College<br />
+            <!-- Installation and maintenance of electrical and civil structures<br /> -->
             Bachelor's degree in Electrical equipment management<br />
           </a>
         </p>
         <p>
           <a href="http://en.chnu.edu.ua/">
+            <!-- Y. Fedkovich -->
             Chernivtsi National University<br />
+            <!-- Department of Applied Physics and Computer Sciences<br /> -->
             Bachelor's degree in Electronics and power engineering
           </a>
         </p>
@@ -444,6 +473,7 @@
             Mate.academy Online coding bootcamp | 2023
           </a>
           <br />
+          <!-- Full-stack Software Development<br /> -->
           React, SASS, Node.js, Express, TS, git, TDD, OOP, MVC, HTTP, WS, DBs, SQL, GraphQL
         </p>
         <p>
@@ -474,8 +504,11 @@
           <a href="https://aws.amazon.com/getting-started/cloud-essentials/">AWS</a>,
           <a href="https://www.cloudskillsboost.google/quests/23">GCP</a>,
           <a href="https://pythoninstitute.org/">PythonInstitute.org</a>,
+          <!-- <a href="https://flask.palletsprojects.com/en/2.3.x/">Flask.PalletsProjects.com,</a> -->
+          <!-- <a href="https://docs.djangoproject.com/en/4.2/">Docs.DjangoProject.com,</a> -->
           <a href="https://www.php.net/manual/en/">PHP: Hypertext Preprocessor</a>,
           <a href="https://college.harvard.edu/">Harvard's CS50</a>,
+          <!-- <a href="https://code.visualstudio.com/docs">Code.VisualStudio.com</a>, -->
           <a href="https://javascript.info/">JavaScript.info</a>,
           <a href="https://www.w3schools.com/">W3schools.com</a>,
           <a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>,
@@ -487,10 +520,18 @@
           <a href="https://www.vuemastery.com/">VueMastery.com</a>,
           <a href="https://tailwindcss.com/">TailWindCSS.com</a>,
           <a href="https://vitejs.dev/guide/">Vitejs.dev</a>,
+          <!-- <a href="https://bootstrap-vue.org/docs">Bootstrap-Vue.org,</a> -->
+          <!-- <a href="https://bulma.io/">Bulma.io,</a> -->
           <a href="https://nuxt.com/">Nuxt.com</a>,
           <a href="https://www.typescriptlang.org/">TypeScriptLang.org</a>,
           <a href="https://git-scm.com/doc">Git-SCM.com</a>,
           <a href="https://nodejs.org/en/docs/guides">NodeJS.org</a>,
+          <!-- <a href="https://docs.npmjs.com/">Docs.NPMjs.com,</a> -->
+          <!-- <a href="https://www.mongodb.com/docs/">MongoDB.com,</a> -->
+          <!-- <a href="https://www.postgresql.org/docs/online-resources/">PostgreSQL.org,</a> -->
+          <!-- <a href="https://dev.mysql.com/doc/refman/8.0/en/tutorial.html">Dev.mySQL.com,</a> -->
+          <!-- <a href="https://www.php.net/manual/en/">PHP.net,</a> -->
+          <!-- <a href="https://learn.cypress.io/">Cypress.io,</a> -->
           <a href="https://www.codewars.com/users/vadym4che">CodeWars.com</a>,
           <a href="https://cssbattle.dev/">CSSbattle.dev</a>,
           <a href="https://html.spec.whatwg.org/multipage/">HTML Standard</a>,
@@ -506,16 +547,19 @@
           <a class="js" href="https://en.wikipedia.org/wiki/HTML"><img src="toolkit/JavaScript-logo.png" alt="JavaScript">JS</a>
           <a href="https://en.wikipedia.org/wiki/TypeScript"><img src="toolkit/Typescript.svg.png" alt="TypeScript">TS</a>
           <a href="https://en.wikipedia.org/wiki/JSON"><img src="toolkit/JSON_vector_logo.svg.png" alt="JSON">JSON</a>
+          <!-- <a href="https://en.wikipedia.org/wiki/JavaScript"><img src="toolkit/js.png" alt="JavaScript"></a> -->
         </p>
         <p>
           <a href="https://en.wikipedia.org/wiki/Node.js"><img src="toolkit/120px-Node.js_logo.svg.png" alt="Node.js">Node.js</a>
           <a href="https://en.wikipedia.org/wiki/Npm"><img src="toolkit/f1786e9b7cba9753ca7b9c40e8b98f67.png" alt="npm">Npm</a>
           <a href="https://en.wikipedia.org/wiki/Vue.js"><img src="toolkit/Vue.js_Logo_2.svg.png" alt="Vue">Vue.js</a>
           <a href="https://en.wikipedia.org/wiki/React_(software)"><img src="toolkit/React-icon.svg.png" alt="React">React</a>
+          <!-- <a href="https://en.wikipedia.org/wiki/Nuxt.js"><img src="toolkit/icon-green.png" alt="Nuxt.js">Nuxt.js</a> -->
           <a href="https://en.wikipedia.org/wiki/PHP"><img src="toolkit/PHP-logo.svg.png" alt="Nuxt.js">PHP</a>
         </p>
         <p>
           <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)"><img src="toolkit/Bash_Logo_Colored.svg.png" alt="bash">bash</a>
+          <!-- <a href="https://en.wikipedia.org/wiki/ESLint"><img src="toolkit/ESLint_logo.svg.png" alt="ESLint">ESLint</a> -->
           <a href="https://en.wikipedia.org/wiki/Git"><img src="toolkit/Git-logo.svg.png" alt="git">git</a>
           <a href="https://en.wikipedia.org/wiki/Visual_Studio_Code"><img src="toolkit/favicon.ico" alt="VSCode">VSCode</a>
           <a href="https://en.wikipedia.org/wiki/Postman_(software)"><img src="toolkit/Postman_(software).png" alt="Postman">Postman</a>
@@ -524,27 +568,27 @@
       </section>
     </div>
     <address class="address">
-        <a href="https://www.linkedin.com/in/vadym4che/">
-          <img src="./links/3li.svg" alt="linkedin">
-        </a>
-        <a href="https://www.facebook.com/vadym4che/">
-          <img src="./links/4fb.svg" alt="facebook">
-        </a>
-        <a href="https://t.me/vadym4che">
-          <img src="./links/6tg.svg" alt="telegram">
-        </a>
-        <a href="https://github.com/vadym4che">
-          <img src="./links/2gh.svg" alt="git-hub">
-        </a>
-        <a href="mailto:vadym4che@gmail.com">
-          <img src="./links/5gm.svg" alt="mail">
-        </a>
-        <a href="tel:+380505444199">
-          <img src="./links/7cp.svg" alt="cell-phone">
-        </a>
-        <a href="https://vadym4che.github.io/cv/">
-          <img src="./links/logo256x256_ch.png" alt="Vue-CV">
-        </a>
+      <a href="https://www.linkedin.com/in/vadym4che/">
+        <img src="./links/3li.svg" alt="linkedin">
+      </a>
+      <a href="https://www.facebook.com/vadym4che/">
+        <img src="./links/4fb.svg" alt="facebook">
+      </a>
+      <a href="https://t.me/vadym4che">
+        <img src="./links/6tg.svg" alt="telegram">
+      </a>
+      <a href="https://github.com/vadym4che">
+        <img src="./links/2gh.svg" alt="git-hub">
+      </a>
+      <a href="mailto:vadym4che@gmail.com">
+        <img src="./links/5gm.svg" alt="mail">
+      </a>
+      <a href="tel:+380505444199">
+        <img src="./links/7cp.svg" alt="cell-phone">
+      </a>
+      <a href="https://vadym4che.github.io/cv/">
+        <img src="./links/logo256x256_ch.png" alt="Vue-CV">
+      </a>
   </address>
   </main>
   <footer class="footer">
