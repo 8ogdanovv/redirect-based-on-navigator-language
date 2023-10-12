@@ -6,18 +6,16 @@
   <title>Redirecting to CV depending on lang</title>
 </head>
 <body>
-  <h1>Redirecting to CV depending on preferred language...</h1>
-
   <script>
     // Check the user's preferred language
     const userLanguage = navigator.language || navigator.userLanguage;
 
     // Define the language preferences and their respective URLs
     const languagePreferences = {
-      'en': 'https://drive.google.com/file/d/1hhdqsoLQ60eMh6v_VxSCn-8hOoZDuxU3/view?usp=drive_link',   // English
+      'en': 'https://drive.google.com/file/d/1Ly_Q1ishnSAe5I-yMpuxQhQa9R-ldc22/view?usp=sharing',   // English
       // 'fr': 'https://example.com/fr',   // French
-      'ua': 'https://drive.google.com/file/d/1MIhND3LALa6F-c90Li9ii5E8mY0iD1e1/view?usp=sharing',   // Ukrainian
-      'ru': 'https://drive.google.com/file/d/1MIhND3LALa6F-c90Li9ii5E8mY0iD1e1/view?usp=sharing',   // ruzzian will atomatically navigate to Mother-tongue Ukrainian
+      'ua': 'https://drive.google.com/file/d/11i22ZetDv0c2Er5t_ko09e3Q2Qd4FVPQ/view?usp=sharing',   // Ukrainian
+      'ru': languagePreferences['ua'],    // ruzzian will atomatically navigate to Mother-tongue Ukrainian
       // Add more language preferences as needed
     };
 
@@ -27,7 +25,7 @@
       window.location.href = languagePreferences[userLanguage];
     } else {
       // Redirect to a default URL if the user's language preference is not recognized
-      window.location.href = 'https://drive.google.com/file/d/1hhdqsoLQ60eMh6v_VxSCn-8hOoZDuxU3/view?usp=drive_link';
+      window.location.href = 'https://drive.google.com/file/d/1Ly_Q1ishnSAe5I-yMpuxQhQa9R-ldc22/view?usp=sharing';
     }
   </script>
 </body>
